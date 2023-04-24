@@ -5,7 +5,7 @@ import moment from "moment/moment";
 const Header = () => {
 
     const {user} = useContext(userContext);
-    const date = moment().format('LLLL');;
+    const date = moment().format('LLLL');
 
     return (
         <div className="w-11/12 mx-auto text-center my-5">
@@ -21,8 +21,6 @@ const Header = () => {
                 </div>
 
             </div>
-            
-            
         </div>
     );
 };
