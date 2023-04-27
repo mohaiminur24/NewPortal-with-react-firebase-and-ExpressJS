@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const Catagorysection = () => {
-    const [category, setCategory] = useState([]);
-    useEffect(()=>{
-        fetch("categories.json").then(res=> res.json()).then(data => setCategory(data));
-    },[])
+    const category = useLoaderData();
     
     return (
         <div>
@@ -12,7 +10,6 @@ const Catagorysection = () => {
             <div className='my-5'>
                 {category && category.map(single =><li className='list-none'><button className='text-sm my-1'>{single.name}</button></li>)}
             </div>
-            
         </div>
     );
 };
