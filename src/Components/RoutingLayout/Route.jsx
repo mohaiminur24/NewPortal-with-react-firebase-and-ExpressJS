@@ -4,6 +4,7 @@ import Allnews from "../HomeLayout/Allnews";
 import CategoriesData from "../CategorydataLayout/CategoriesData";
 import NewsDetails from "../NewsDetailsLayout/NewsDetails";
 import LoginPage from "../LoginRegistrationLayout/LoginPage";
+import Registration from "../LoginRegistrationLayout/Registration";
 
 
 export const route = createBrowserRouter([
@@ -33,5 +34,9 @@ export const route = createBrowserRouter([
     {
         path:"/login",
         element: <LoginPage/>
+    },
+    {
+        path:"/Registration",
+        element: <Registration/>
     }
 ])

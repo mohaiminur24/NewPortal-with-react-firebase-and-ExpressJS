@@ -1,10 +1,14 @@
 import React from 'react';
-import NavLink from '../NavLinkLayout/NavLink';
+import { NavLink } from 'react-router-dom';
+import NavLinks from '../NavLinkLayout/NavLink';
+
 
 const LoginPage = () => {
+
+
     return (
         <div className='min-h-screen mt-0'>
-            <NavLink/>
+            <NavLinks/>
 
             <div className='flex items-center min-h-[calc(100vh-100px)]'>
                 <div className='w-3/5 bg-gray-50 rounded-md shadow-sm p-16 mx-auto'>
@@ -16,7 +20,7 @@ const LoginPage = () => {
                         <label className='font-semibold' htmlFor="password">Password</label>
                         <input className='border outline-none mb-5 block w-full px-5 py-2 text-sm rounded-md bg-white' placeholder='Enter Your Password' type="password" name="loginpassword" id="password" />
                         <input className='border bg-slate-600 rounded-md text-white mb-5 block w-full px-5 py-2 text-sm ' type="submit" value="Login" />
-                        <p>Don't have an Account? <button className='font-semibold text-red-500'>Register</button> </p>
+                        <p>Don't have an Account? <NavLink to="/Registration" className='font-semibold text-red-500'>Register</NavLink> </p>
                     </form>
                 </div>
             </div>
