@@ -21,9 +21,9 @@ const Findus = () => {
                 <h1 className='font-semibold'>Q zone</h1>
 
                 <div className='my-5'>
-                    <img src="images/qZone1.png" alt="" />
-                    <img src="images/qZone2.png" alt="" />
-                    <img src="images/qZone3.png" alt="" />
+                    <img src="../../../public/images/qZone1.png" alt="" />
+                    <img src="../../../public/images/qZone2.png" alt="" />
+                    <img src="../../../public/images/qZone3.png" alt="" />
                 </div>
             </div>
 

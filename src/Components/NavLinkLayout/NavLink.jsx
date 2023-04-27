@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NavLink = () => {
     return (
         <div className='w-11/12 mx-auto flex items-center relative my-5'>
             <div className='mx-auto flex gap-5 font-semibold text-gray-600'>
 
-                <button>Home</button>
+                <Link to="/">Home</Link>
                 <button>About</button>
                 <button>Career</button>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark, faShareNodes, faEye,faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import moment from 'moment';
 import Rating from 'react-rating';
 
@@ -26,7 +26,7 @@ const SingleNews = ({data}) => {
                 <h1 className='font-bold text-2xl mb-5'>{data.title}</h1>
                 <img className='w-full' src={data?.image_url} alt="" />
                 <p className='mt-5 text-sm text-gray-400'>{data?.details.length > 400 ? data.details.slice(0,400) : data.details}</p>
-                <span>{data?.details.length > 400 && <Link to={`/news/${data._id}`} className='text-sm font-semibold text-red-500'>Read More</Link>}</span>
+                <span>{data?.details.length > 400 && <NavLink to={`/newsdetails/${data._id}`} className='text-sm font-semibold text-red-500'>Read More</NavLink>}</span>
             </div>
 
             <div className='p-5 border flex justify-between'>
