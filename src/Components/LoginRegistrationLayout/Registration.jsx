@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import NavLinks from '../NavLinkLayout/NavLink';
 import { NavLink } from 'react-router-dom';
+import { userContext } from '../AuthContextLayout/AuthContext';
 
 
 const Registration = () => {
+    const [error, setError] = useState('');
+    const {handleregisterbyemailpass,setUser,user} = useContext(userContext);
+
     const handleRegister =(event)=>{
         event.preventDefault();
         const username = event.target.name.value;
         const photoUrl = event.target.photourl.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
+
+        handleregisterbyemailpass(email,password)
+        .then(res=>{
+            res.user.displayName = username;
+            res.user.photoURL = photoUrl;
+            console.log(res.user);
+            setUser(res.user);
+            event.target.reset();
+            alert("Create user successfully!")
+
+        }).then(error=>{
+            setError(error.message);
+        })
 
         
 
