@@ -5,7 +5,6 @@ import { NavLink, useLoaderData } from 'react-router-dom';
 
 const NewsDetails = () => {
     const data = useLoaderData();
-    console.log(data);
     const {image_url,title,details,category_id} = data;
 
     return (

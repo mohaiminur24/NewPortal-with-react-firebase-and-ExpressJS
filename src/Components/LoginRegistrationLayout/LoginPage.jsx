@@ -1,20 +1,23 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Navigate, useLocation } from 'react-router-dom';
 import NavLinks from '../NavLinkLayout/NavLink';
 import { userContext } from '../AuthContextLayout/AuthContext';
 
 
 const LoginPage = () => {
-    const {handleloginbyemailpass,setUser} = useContext(userContext);
+    const {handleloginbyemailpass} = useContext(userContext);
+    const location = useLocation();
+    console.log("loginpage", location);
+
+    const from = location?.state?.from?.pathname || "/";
 
     const handleloginuser =(event)=>{
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
         handleloginbyemailpass(email,password).then(res=>{
-            alert("Login Your account succesfully!");
-            setUser(res.user);
             event.target.reset()
+            Navigate(from, {replace: true});
         }).then(error=>{
             console.log(error.message);
         })
