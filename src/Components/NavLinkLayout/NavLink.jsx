@@ -18,7 +18,7 @@ const NavLinks = () => {
             </div>
             <div className='right-0 absolute flex gap-5 items-center'>
                 <div><FontAwesomeIcon icon={faUser} /></div>
-                {user ? <button onClick={()=> setUser("")} className='px-5 py-2 rounded-sm font-semibold bg-gray-500 text-white'>Logout</button> : <NavLink to="/login" className='px-5 py-2 rounded-sm font-semibold bg-gray-500 text-white'>Login</NavLink>}
+                {user ? <button onClick={()=> setUser("")} className='px-5 py-2 rounded-md font-semibold bg-gray-500 text-white'>Logout</button> : <NavLink to="/login" className='px-5 py-2 rounded-md font-semibold bg-gray-500 text-white'>Login</NavLink>}
             </div>
             
         </div>
