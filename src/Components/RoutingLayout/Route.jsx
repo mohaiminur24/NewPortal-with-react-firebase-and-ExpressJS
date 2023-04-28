@@ -5,6 +5,7 @@ import CategoriesData from "../CategorydataLayout/CategoriesData";
 import NewsDetails from "../NewsDetailsLayout/NewsDetails";
 import LoginPage from "../LoginRegistrationLayout/LoginPage";
 import Registration from "../LoginRegistrationLayout/Registration";
+import PrivateRoute from "../AuthContextLayout/PrivateRoute";
 
 
 export const route = createBrowserRouter([
@@ -28,7 +29,7 @@ export const route = createBrowserRouter([
     },
     {
         path:"/newsdetails/:id",
-        element: <NewsDetails/>,
+        element: <PrivateRoute><NewsDetails/></PrivateRoute>,
         loader: ({params})=>fetch(`http://localhost:5000/news/${params.id}`)
     },
     {
