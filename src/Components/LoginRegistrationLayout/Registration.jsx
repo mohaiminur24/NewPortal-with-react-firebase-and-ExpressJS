@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
 import NavLinks from '../NavLinkLayout/NavLink';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { userContext } from '../AuthContextLayout/AuthContext';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const Registration = () => {
     const [error, setError] = useState('');
-    const {handleregisterbyemailpass,setUser,user} = useContext(userContext);
+    const {handleregisterbyemailpass} = useContext(userContext);
+    const navigate = useNavigate();
 
     const handleRegister =(event)=>{
         event.preventDefault();
@@ -19,11 +21,9 @@ const Registration = () => {
         .then(res=>{
             res.user.displayName = username;
             res.user.photoURL = photoUrl;
-            console.log(res.user);
-            setUser(res.user);
             event.target.reset();
-            alert("Create user successfully!")
-
+            toast.success('Successfully complete!');
+            navigate("/");
         }).then(error=>{
             setError(error.message);
         })
@@ -49,11 +49,15 @@ const Registration = () => {
                         <input className='border mb-2 block w-full outline-none px-5 py-2 text-sm rounded-md bg-white' placeholder='Enter Your Email Address' type="email" name="email" id="email"  required/>
                         <label className='font-semibold' htmlFor="password">Password</label>
                         <input className='border outline-none mb-5 block w-full px-5 py-2 text-sm rounded-md bg-white' placeholder='Enter Your Password' type="password" name="password" id="password" required/>
+
+                        <p className='text-xs my-5 text-red-500'>{error && error}</p>
+                        
                         <input className='border bg-slate-600 rounded-md text-white mb-5 block w-full px-5 py-2 text-sm ' type="submit" value="Register" />
                         <p>Already have an Account? <NavLink to="/login" className='font-semibold text-red-500'>Login</NavLink> </p>
                     </form>
                 </div>
-            </div>           
+            </div>
+            <div><Toaster/></div>         
         </div>
     );
 };

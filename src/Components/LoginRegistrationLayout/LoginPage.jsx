@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NavLink, Navigate, useLocation } from 'react-router-dom';
+import { NavLink, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import NavLinks from '../NavLinkLayout/NavLink';
 import { userContext } from '../AuthContextLayout/AuthContext';
 
@@ -7,7 +7,7 @@ import { userContext } from '../AuthContextLayout/AuthContext';
 const LoginPage = () => {
     const {handleloginbyemailpass} = useContext(userContext);
     const location = useLocation();
-    console.log("loginpage", location);
+    const navigate = useNavigate();
 
     const from = location?.state?.from?.pathname || "/";
 
@@ -17,7 +17,7 @@ const LoginPage = () => {
         const password = event.target.password.value;
         handleloginbyemailpass(email,password).then(res=>{
             event.target.reset()
-            Navigate(from, {replace: true});
+            navigate(from, {replace: true});
         }).then(error=>{
             console.log(error.message);
         })

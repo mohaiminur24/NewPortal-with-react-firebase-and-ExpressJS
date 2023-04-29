@@ -1,10 +1,12 @@
 import { createContext, useEffect, useState } from "react";
 import app from "./FirebaseConfig";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, GithubAuthProvider } from "firebase/auth";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 export const userContext = createContext();
 
@@ -24,13 +26,23 @@ const AuthContext = ({children}) => {
     const handleloginbygoogle = () =>{
         signInWithPopup(auth,googleProvider)
         .then(res=>{
-            alert("Login with google successfuly!")
+            toast.success('Successfully Login By Google!');
         }).then(error=>{
             console.log(error)
         })
     };
     const Logout = ()=>{
             return signOut(auth);
+    };
+
+    const handleloginbygithub =()=>{
+        signInWithPopup(auth, githubProvider)
+        .then(result=>{
+            toast.success('Successfully Login by Github!')
+        }).catch(error=>{
+            console.log(error.message);
+        })
+
     }
 
     useEffect(()=>{
@@ -49,12 +61,14 @@ const AuthContext = ({children}) => {
         handleregisterbyemailpass,
         handleloginbyemailpass,
         handleloginbygoogle,
+        handleloginbygithub,
         Logout,
         loading
     }
 
     return (
         <userContext.Provider value={data}>
+            <div><Toaster/></div>
             {children}
         </userContext.Provider>
     );

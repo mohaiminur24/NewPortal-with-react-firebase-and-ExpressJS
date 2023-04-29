@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { userContext } from '../AuthContextLayout/AuthContext';
+import toast, { Toaster } from 'react-hot-toast';
 
 const NavLinks = () => {
     const {user,Logout} = useContext(userContext);
 
     const handleLogout = () =>{
         Logout().then(res=>{
-            alert("Logout successfully!")
+            toast.success('Logout Successfully!');
         }).then(error=>{
             console.log(error.message);
         })
@@ -28,7 +27,7 @@ const NavLinks = () => {
                 <div>{user && user?.displayName || user?.email}</div>
                 {user ? <button onClick={handleLogout} className='px-5 py-2 rounded-md font-semibold bg-gray-500 text-white'>Logout</button> : <NavLink to="/login" className='px-5 py-2 rounded-md font-semibold bg-gray-500 text-white'>Login</NavLink>}
             </div>
-            
+            <div><Toaster/></div>            
         </div>
     );
 };
