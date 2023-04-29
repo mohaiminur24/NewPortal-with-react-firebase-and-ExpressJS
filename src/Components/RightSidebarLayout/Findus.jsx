@@ -20,10 +20,10 @@ const Findus = () => {
             <div className='bg-gray-100 p-5 rounded-sm'>
                 <h1 className='font-semibold'>Q zone</h1>
 
-                <div className='my-5'>
-                    <img src="../../../public/images/qZone1.png" alt="" />
-                    <img src="../../../public/images/qZone2.png" alt="" />
-                    <img src="../../../public/images/qZone3.png" alt="" />
+                <div className='my-5 flex flex-col gap-5 rounded-md'>
+                    <img src="https://images.pexels.com/photos/4982457/pexels-photo-4982457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                    <img src="https://images.pexels.com/photos/5063313/pexels-photo-5063313.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                    <img src="https://images.pexels.com/photos/5623062/pexels-photo-5623062.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
                 </div>
             </div>
 
