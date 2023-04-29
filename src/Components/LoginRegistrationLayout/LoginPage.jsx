@@ -30,10 +30,10 @@ const LoginPage = () => {
             <NavLinks/>
 
             <div className='flex items-center min-h-[calc(100vh-100px)]'>
-                <div className='w-3/5 bg-gray-50 rounded-md shadow-sm p-16 mx-auto'>
+                <div className='w-full lg:w-3/5 bg-gray-50 rounded-md shadow-sm p-16 mx-auto'>
                     <h1 className='text-2xl text-center mb-10 font-semibold'>Login Your Account</h1>
                     
-                    <form onSubmit={handleloginuser} className='w-3/5 mx-auto'>
+                    <form onSubmit={handleloginuser} className='w-full lg:w-3/5 mx-auto'>
                         <label className='font-semibold' htmlFor="email">Email addrress</label>
                         <input className='border mb-2 block w-full outline-none px-5 py-2 text-sm rounded-md bg-white' placeholder='Enter Your Email Address' type="email" name="email" id="email" />
                         <label className='font-semibold' htmlFor="password">Password</label>

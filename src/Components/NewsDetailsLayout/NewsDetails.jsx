@@ -11,14 +11,14 @@ const NewsDetails = () => {
         <div>
             <Header/>
             <div className='w-11/12 mx-auto grid grid-cols-5 gap-5 my-10'>
-                <div className='col-span-4'>
+                <div className='col-span-5 lg:col-span-4'>
                     <img className='w-full' src={image_url} alt="" />
                     <h1 className='text-2xl my-5 font-semibold'>{title}</h1>
                     <p className='text-sm text-gray-600'>{details}</p>
 
                     <button className='px-5 py-2 bg-red-600 my-5 rounded-md text-sm text-gray-200 font-semibold'><NavLink to={`/categories/${category_id}`}>All News in this category </NavLink></button>
                 </div>
-                <RightSidebar/>
+                <div className='hidden lg:block'><RightSidebar/></div>
             </div>
             
         </div>

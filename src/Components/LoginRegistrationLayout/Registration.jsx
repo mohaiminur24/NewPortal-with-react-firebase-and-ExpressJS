@@ -37,10 +37,10 @@ const Registration = () => {
             <NavLinks/>
 
             <div className='flex items-center min-h-[calc(100vh-100px)]'>
-                <div className='w-3/5 bg-gray-50 rounded-md shadow-sm p-16 mx-auto'>
+                <div className='w-full lg:w-3/5 bg-gray-50 rounded-md shadow-sm p-16 mx-auto'>
                     <h1 className='text-2xl text-center mb-10 font-semibold'>Register Your Account</h1>
                     
-                    <form onSubmit={handleRegister} className='w-3/5 mx-auto'>
+                    <form onSubmit={handleRegister} className='w-full lg:w-3/5 mx-auto'>
                         <label className='font-semibold' htmlFor="email">Your Name</label>
                         <input className='border mb-2 block w-full outline-none px-5 py-2 text-sm rounded-md bg-white' placeholder='Enter Your Name' type="text" name="name" id="name"  required/>
                         <label className='font-semibold' htmlFor="email">Photo URL</label>

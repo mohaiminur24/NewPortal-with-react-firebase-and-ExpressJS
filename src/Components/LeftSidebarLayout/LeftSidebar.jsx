@@ -7,6 +7,7 @@ const LeftSidebar = () => {
         <div>
             <Catagorysection/>
 
+            <div className='hidden lg:block'>
             <div>
                 <img className='w-full h-auto my-1' src="https://images.pexels.com/photos/1549974/pexels-photo-1549974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
                 <p className='font-semibold text-gray-700 my-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -26,6 +27,7 @@ const LeftSidebar = () => {
                 <span> <FaCalendarCheck className='inline-block mx-2'/>  Jan 10, 2023</span></div>
             </div>
         </div>
+            </div>
     );
 };
 

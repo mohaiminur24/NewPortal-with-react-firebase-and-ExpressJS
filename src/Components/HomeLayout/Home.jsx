@@ -11,9 +11,9 @@ const Home = () => {
             <Header/>
             <NavLinks/>
             <div className='w-11/12 mx-auto grid grid-cols-5 gap-5 my-10'>
-                <LeftSidebar/>
-                <div className='col-span-3'><Outlet/></div>
-                <RightSidebar/>
+                <div className='mx-auto col-span-5 text-center lg:text-left lg:col-span-1'><LeftSidebar/></div>
+                <div className='col-span-5 lg:col-span-3'><Outlet/></div>
+                <div className='hidden lg:block'><RightSidebar/></div>
             </div>
             
         </div>
