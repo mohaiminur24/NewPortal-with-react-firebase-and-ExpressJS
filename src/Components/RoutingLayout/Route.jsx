@@ -12,17 +12,17 @@ export const route = createBrowserRouter([
     {
         path:"/",
         element: <Home/>,
-        loader: ()=>fetch("http://localhost:5000/category"),
+        loader: ()=>fetch("https://newsportal-server-developermmr.vercel.app/category"),
         children:[
             {
                 path:"/",
                 element: <Allnews/>,
-                loader: ()=> fetch("http://localhost:5000/news")
+                loader: ()=> fetch("https://newsportal-server-developermmr.vercel.app/news")
             },
             {
                 path:"/categories/:id",
                 element: <CategoriesData></CategoriesData>,
-                loader: ({params})=> fetch(`http://localhost:5000/category/${params.id}`)
+                loader: ({params})=> fetch(`https://newsportal-server-developermmr.vercel.app/category/${params.id}`)
             }
 
         ]
@@ -30,7 +30,7 @@ export const route = createBrowserRouter([
     {
         path:"/newsdetails/:id",
         element: <PrivateRoute><NewsDetails/></PrivateRoute>,
-        loader: ({params})=>fetch(`http://localhost:5000/news/${params.id}`)
+        loader: ({params})=>fetch(`https://newsportal-server-developermmr.vercel.app/news/${params.id}`)
     },
     {
         path:"/login",
