@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
         <div className="w-11/12 mx-auto text-center my-5">
-            <img className="w-1/4 mx-auto" src="../../public/logo.png" alt="" />
+            <img className="w-1/4 mx-auto" src="https://images2.imgbox.com/89/2e/bminM0Ds_o.png" alt="" />
             <h3 className="text-sm text-gray-400 mt-3">journalism without Fear and Favour</h3>
             <h2 className="text-sm text-gray-400 mb-3">{date}</h2>
             <div className="w-full h-auto bg-gray-200 py-2 px-2 flex items-center rounded-sm my-5">
